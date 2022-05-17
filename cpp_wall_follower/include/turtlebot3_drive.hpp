@@ -85,9 +85,8 @@ private:
 
   bool crashed = false;
 
-  int robot_pos_state_;
-  string robot_pos_state_s;
-
+  char const *robot_pos_state_;
+ 
   // ROS timer
   rclcpp::TimerBase::SharedPtr update_timer_;
 
