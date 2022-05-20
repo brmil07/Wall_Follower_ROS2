@@ -67,9 +67,6 @@ void Turtlebot3Drive::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg
   m.getRPY(roll, pitch, yaw);
 
   robot_pose_ = yaw;
-  
-  /*Print on the terminal*/
-  RCLCPP_INFO(this->get_logger(), "robot_pose: %lf ", robot_pose_);
 }
 
 void Turtlebot3Drive::scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
