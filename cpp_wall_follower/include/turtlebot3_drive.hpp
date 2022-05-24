@@ -87,6 +87,15 @@ private:
 
   char const *robot_pos_state_;
  
+  float alpha, theta;
+  float A1, B1;
+  float TD;
+  float left_distance, right_distance;
+
+  float error, prev_error;
+  float pid, integral, derivative, setpoint, measured_value;
+  float PID;
+ 
   // ROS timer
   rclcpp::TimerBase::SharedPtr update_timer_;
 
@@ -102,5 +111,10 @@ private:
   void tb3_turn_right();
   void tb3_follow_the_wall();
   void tb3_move_backward();
+  
+  // To plot data using ros2 /topic
+  rclcpp::TimerBase::SharedPtr timer_;
+  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
+  void timer_callback_();
 };
 #endif  // TURTLEBOT3_GAZEBO__TURTLEBOT3_DRIVE_HPP_
