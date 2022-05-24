@@ -58,13 +58,18 @@ ament_target_dependencies(cpp_wall_follower_right ${dependencies})
 add_executable(cpp_wall_follower_left src/cpp_wall_follower_left.cpp)
 ament_target_dependencies(cpp_wall_follower_left ${dependencies})
 
-# add_executable(minimal_subscriber src/high_level_controller.cpp)
-# ament_target_dependencies(minimal_subscriber rclcpp std_msgs geometry_msgs sensor_msgs visualization_msgs)
+add_executable(cpp_pid_wall_follower_right src/cpp_pid_wall_follower_right.cpp)
+ament_target_dependencies(cpp__pid_wall_follower_right ${dependencies})
+
+add_executable(cpp_pid_wall_follower_left src/cpp_pid_wall_follower_left.cpp)
+ament_target_dependencies(cpp_pid_wall_follower_left ${dependencies})
 
 # Install
 install(TARGETS 
   cpp_wall_follower_right
   cpp_wall_follower_left
+  cpp_pid_wall_follower_right
+  cpp_pid_wall_follower_left
   DESTINATION lib/${PROJECT_NAME}
 )
 
