@@ -17,6 +17,9 @@
 #ifndef TURTLEBOT3_GAZEBO__TURTLEBOT3_DRIVE_HPP_
 #define TURTLEBOT3_GAZEBO__TURTLEBOT3_DRIVE_HPP_
 
+#include <chrono>
+#include <functional>
+#include <memory>
 #include <string.h>
 #include <stdint.h>
 #include <vector>
