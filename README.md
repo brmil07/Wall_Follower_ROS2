@@ -26,6 +26,18 @@ ros2 run cpp_wall_follower cpp_wall_follower_left
 ros2 run cpp_wall_follower cpp_wall_follower_right
 ```
 
+* To follow left wall with pid
+
+```bash
+ros2 run cpp_wall_follower cpp_pid_wall_follower_left
+```
+
+* To follow right wall with pid
+
+```bash
+ros2 run cpp_wall_follower cpp_pid_wall_follower_right
+```
+
 #### Python
 
 To run `py_wall_follower` launch files
