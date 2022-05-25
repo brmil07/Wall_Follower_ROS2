@@ -181,10 +181,7 @@ void Turtlebot3Drive::update_callback()
         else if (front_side_min < distance_test && left_side_min < distance_test && right_side_min < distance_test){
           tb3_turn_right(); 
         }          
-      } 
-      else {
-        tb3_turn_right();
-      } 
+      }  
     }
     else {
       tb3_move_backward();
