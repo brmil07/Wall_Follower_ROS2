@@ -182,9 +182,6 @@ void Turtlebot3Drive::update_callback()
           tb3_turn_left(); 
         }          
       } 
-      else {
-        tb3_turn_left();
-      } 
     }
     else {
       tb3_move_backward();
