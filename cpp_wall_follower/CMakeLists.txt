@@ -59,7 +59,7 @@ add_executable(cpp_wall_follower_left src/cpp_wall_follower_left.cpp)
 ament_target_dependencies(cpp_wall_follower_left ${dependencies})
 
 add_executable(cpp_pid_wall_follower_right src/cpp_pid_wall_follower_right.cpp)
-ament_target_dependencies(cpp__pid_wall_follower_right ${dependencies})
+ament_target_dependencies(cpp_pid_wall_follower_right ${dependencies})
 
 add_executable(cpp_pid_wall_follower_left src/cpp_pid_wall_follower_left.cpp)
 ament_target_dependencies(cpp_pid_wall_follower_left ${dependencies})
