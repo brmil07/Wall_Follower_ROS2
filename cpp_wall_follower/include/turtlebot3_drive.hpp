@@ -31,6 +31,7 @@
 #include <sensor_msgs/msg/laser_scan.hpp>
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <tf2/LinearMath/Quaternion.h>
+#include "std_msgs/msg/string.hpp"
 
 #define DEG2RAD (M_PI / 180.0)
 #define RAD2DEG (180.0 / M_PI)
@@ -85,6 +86,7 @@ private:
   float left_side_min;
   float right_side_min;
   float behind_side_min;
+  float all_side_min;
 
   bool crashed = false;
 
