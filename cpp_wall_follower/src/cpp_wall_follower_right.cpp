@@ -1,7 +1,5 @@
 #include "turtlebot3_drive.hpp"
 
-#include <memory>
-
 using namespace std;
 using namespace std::chrono_literals;
 
@@ -77,7 +75,7 @@ void Turtlebot3Drive::scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr
   range_min = msg->range_max; 
   range_max = msg->range_min;
 
-  float crashed_min = 0.2;
+  float crashed_min = 0.30;
   side_min = 3.5;
 
   front_side_min = side_min;
@@ -151,11 +149,11 @@ void Turtlebot3Drive::update_cmd_vel(double linear, double angular)
 ********************************************************************************/
 void Turtlebot3Drive::update_callback()
 {
-  double distance_min = 0.4;
-  double distance_test = 0.8;
+  double distance_min = 0.20;
+  double distance_test = 0.60;
 
-  if (!crashed){
-    if (front_side_min > distance_min){
+  if (front_side_min > distance_min){
+    if (!crashed){
       if (right_side_min > distance_min && front_right_side_min > distance_min){  
         if (front_side_min > distance_test && left_side_min > distance_test && right_side_min > distance_test){
           tb3_find_wall();
