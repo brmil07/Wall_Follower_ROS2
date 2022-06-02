@@ -206,8 +206,8 @@ class Controller(Node):
     d = self.dist_thresh_wf
     e = self.dist_too_close_to_wall
 
-    if not self.crashed: 
-      if self.front_dist > e and self.rightfront_dist > e and self.right_dist > e:
+    if self.front_dist > e and self.rightfront_dist > e and self.right_dist > e:  
+      if not self.crashed: 
         if self.leftfront_dist > d and self.front_dist > d and self.rightfront_dist > d:
           self.wall_following_state = "search for wall"
           msg.linear.x = self.forward_speed
