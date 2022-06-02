@@ -212,41 +212,32 @@ class Controller(Node):
           self.wall_following_state = "search for wall"
           msg.linear.x = self.forward_speed
           msg.angular.z = self.turning_speed_wf_slow # Turn left to find wall
-    
         elif self.leftfront_dist > d and self.front_dist > d and self.rightfront_dist < d:
           self.wall_following_state = "search for wall"
           msg.linear.x = self.forward_speed
           msg.angular.z = self.turning_speed_wf_slow # Turn left to find wall
-
         elif self.leftfront_dist > d and self.front_dist > d and self.rightfront_dist < d:
           self.wall_following_state = "search for wall"
           msg.linear.x = self.forward_speed
           msg.angular.z = self.turning_speed_wf_slow # Turn left to find wall
-
         elif (self.leftfront_dist < d and self.front_dist > d and self.rightfront_dist > d):
           self.wall_following_state = "follow wall" 
           msg.linear.x = self.forward_speed # Go straight ahead  
-    
         elif self.leftfront_dist > d and self.front_dist < d and self.rightfront_dist > d:
           self.wall_following_state = "turn right"
           msg.angular.z = -self.turning_speed_wf_fast # Turn right to avoid wall
-
         elif self.leftfront_dist > d and self.front_dist < d and self.rightfront_dist < d:
           self.wall_following_state = "turn right"
           msg.angular.z = -self.turning_speed_wf_fast # Turn right to avoid wall
-    
         elif self.leftfront_dist < d and self.front_dist < d and self.rightfront_dist > d:
           self.wall_following_state = "turn right"
-          msg.angular.z = -self.turning_speed_wf_fast # Turn right to avoid wall
-    
+          msg.angular.z = -self.turning_speed_wf_fast # Turn right to avoid wall 
         elif self.leftfront_dist < d and self.front_dist < d and self.rightfront_dist < d:
           self.wall_following_state = "turn right"
-          msg.angular.z = -self.turning_speed_wf_fast # Turn right to avoid wall
-                
+          msg.angular.z = -self.turning_speed_wf_fast # Turn right to avoid wall          
       else:
         self.wall_following_state = "move backward"
-        msg.linear.x = -1.0
-        
+        msg.linear.x = -1.0  
     else:
       msg.angular.x = 0.0
       msg.angular.z = 0.0
