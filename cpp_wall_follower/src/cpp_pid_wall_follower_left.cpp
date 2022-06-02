@@ -97,7 +97,6 @@ void Turtlebot3Drive::scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr
       A1 = laser_ranges[15];
     }
   }
-  
   if (laser_ranges[60] > 0){
     if(laser_ranges[60] > side_min){
       B1 = side_min;
@@ -115,13 +114,11 @@ void Turtlebot3Drive::scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr
           front_side_min = laser_ranges[a];
       }
   }
-
   for (int a = 0; a < 360; a++) {
     if (laser_ranges[a] < all_side_min && laser_ranges[a] > 0) {
           all_side_min = laser_ranges[a];
       }
   }
-
  }
 
 void Turtlebot3Drive::update_cmd_vel(double linear, double angular)
