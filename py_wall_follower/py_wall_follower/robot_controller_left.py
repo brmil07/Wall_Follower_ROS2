@@ -216,7 +216,7 @@ class Controller(Node):
           self.wall_following_state = "search for wall"
           msg.linear.x = self.forward_speed
           msg.angular.z = self.turning_speed_wf_slow # Turn left to find wall
-        elif self.leftfront_dist > d and self.front_dist > d and self.rightfront_dist < d:
+        elif self.leftfront_dist < d and self.front_dist > d and self.rightfront_dist < d:
           self.wall_following_state = "search for wall"
           msg.linear.x = self.forward_speed
           msg.angular.z = self.turning_speed_wf_slow # Turn left to find wall
